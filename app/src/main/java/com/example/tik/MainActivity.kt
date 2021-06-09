@@ -35,6 +35,15 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        val pref = PreferenceManager.getDefaultSharedPreferences(this)
+        pref.apply {
+            val checked = getBoolean("checked", false)
+            checkedThemeGlobal = checked
+        }
+
+        // Set them on startup
+        setTheme()
+
     }
 
     fun theme(view: View?) {
