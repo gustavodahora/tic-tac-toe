@@ -109,112 +109,139 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun first_first(v: View) {
-        if (startCheck) {
-            binding.firstFirst.text = currentlyKey
-            firstFirst = currentlyKey
-            typeCheck = 1
-            setCurrentlyKey()
-            if (binding.firstFirst.text != " ") {
-                checkWin()
+        if (binding.firstFirst.text == " ") {
+            if (startCheck) {
+                binding.firstFirst.text = currentlyKey
+                firstFirst = currentlyKey
+                typeCheck = 1
+                setCurrentlyKey()
+                if (binding.firstFirst.text != " ") {
+                    checkWin()
+                }
             }
         }
+
     }
 
     fun first_second(v: View) {
-        if (startCheck) {
-            binding.firstSecond.text = currentlyKey
-            firstSecond = currentlyKey
-            typeCheck = 2
-            setCurrentlyKey()
-            if (binding.firstSecond.text != " ") {
-                checkWin()
+        if (binding.firstSecond.text == " ") {
+            if (startCheck) {
+                binding.firstSecond.text = currentlyKey
+                firstSecond = currentlyKey
+                typeCheck = 2
+                setCurrentlyKey()
+                if (binding.firstSecond.text != " ") {
+                    checkWin()
+                }
             }
         }
+
 
     }
 
     fun first_third(v: View) {
-        if (startCheck) {
-            typeCheck = 3
-            binding.firstThird.text = currentlyKey
-            firstThird = currentlyKey
-            setCurrentlyKey()
-            if (binding.firstThird.text != " ") {
-                checkWin()
+        if (binding.firstThird.text == " ") {
+            if (startCheck) {
+                typeCheck = 3
+                binding.firstThird.text = currentlyKey
+                firstThird = currentlyKey
+                setCurrentlyKey()
+                if (binding.firstThird.text != " ") {
+                    checkWin()
+                }
             }
         }
+
     }
 
     fun second_first(v: View) {
-        if (startCheck) {
-            binding.secondFirst.text = currentlyKey
-            secondFirst = currentlyKey
-            typeCheck = 4
-            setCurrentlyKey()
-            if (binding.secondFirst.text != " ") {
-                checkWin()
+        if (binding.secondFirst.text == " ") {
+            if (startCheck) {
+                binding.secondFirst.text = currentlyKey
+                secondFirst = currentlyKey
+                typeCheck = 4
+                setCurrentlyKey()
+                if (binding.secondFirst.text != " ") {
+                    checkWin()
+                }
             }
         }
+
     }
 
     fun second_second(v: View) {
-        if (startCheck) {
-            binding.secondSecond.text = currentlyKey
-            secondSecond = currentlyKey
-            typeCheck = 5
-            setCurrentlyKey()
-            if (binding.secondSecond.text != " ") {
-                checkWin()
+        if (binding.secondSecond.text == " ") {
+            if (startCheck) {
+                binding.secondSecond.text = currentlyKey
+                secondSecond = currentlyKey
+                typeCheck = 5
+                setCurrentlyKey()
+                if (binding.secondSecond.text != " ") {
+                    checkWin()
+                }
             }
         }
+
     }
 
     fun second_third(v: View) {
-        if (startCheck) {
-            binding.secondThird.text = currentlyKey
-            secondThird = currentlyKey
-            typeCheck = 6
-            setCurrentlyKey()
-            if (binding.secondThird.text != " ") {
-                checkWin()
+        if (binding.secondThird.text == " ") {
+            if (startCheck) {
+                binding.secondThird.text = currentlyKey
+                secondThird = currentlyKey
+                typeCheck = 6
+                setCurrentlyKey()
+                if (binding.secondThird.text != " ") {
+                    checkWin()
+                }
             }
         }
+
     }
 
     fun third_first(v: View) {
-        if (startCheck) {
-            binding.thirdFirst.text = currentlyKey
-            thirdFirst = currentlyKey
-            typeCheck = 7
-            setCurrentlyKey()
-            if (binding.thirdFirst.text != " ") {
-                checkWin()
+        if (binding.thirdFirst.text == " ") {
+            if (startCheck) {
+                binding.thirdFirst.text = currentlyKey
+                thirdFirst = currentlyKey
+                typeCheck = 7
+                setCurrentlyKey()
+                if (binding.thirdFirst.text != " ") {
+                    checkWin()
+                }
             }
         }
+
     }
 
     fun third_second(v: View) {
-        if (startCheck) {
-            binding.thirdSecond.text = currentlyKey
-            thirdSecond = currentlyKey
-            typeCheck = 8
-            setCurrentlyKey()
-            if (binding.thirdSecond.text != " ") {
-                checkWin()
+        if (binding.thirdSecond.text == " ") {
+            if (startCheck) {
+                binding.thirdSecond.text = currentlyKey
+                thirdSecond = currentlyKey
+                typeCheck = 8
+                setCurrentlyKey()
+                if (binding.thirdSecond.text != " ") {
+                    checkWin()
+                }
             }
         }
+
     }
 
     fun third_third(v: View) {
-        if (startCheck) {
-            binding.thirdThird.text = currentlyKey
-            thirdThird = currentlyKey
-            typeCheck = 9
-            setCurrentlyKey()
-            if (binding.thirdThird.text != " ") {
-                checkWin()
+        if (binding.thirdThird.text == " ") {
+            if (startCheck) {
+                binding.thirdThird.text = currentlyKey
+                thirdThird = currentlyKey
+                typeCheck = 9
+                setCurrentlyKey()
+                if (binding.thirdThird.text != " ") {
+                    checkWin()
+                }
             }
         }
+
     }
 
     // Points
