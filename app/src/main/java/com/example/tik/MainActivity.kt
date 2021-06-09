@@ -77,6 +77,10 @@ class MainActivity : AppCompatActivity() {
     // RESET
     fun reset(v: View) {
         setReset()
+        pointsX = 0
+        pointsO = 0
+        setPointValue()
+        setPointColor()
     }
 
     fun setReset() {
@@ -361,9 +365,12 @@ class MainActivity : AppCompatActivity() {
         } else if (pointsX > pointsO) {
             binding.xValue.setBackgroundColor(ContextCompat.getColor(this, R.color.winning))
             binding.oValue.setBackgroundColor(ContextCompat.getColor(this, R.color.gray))
-        } else {
+        } else if (pointsX == pointsO && pointsX != 0) {
             binding.xValue.setBackgroundColor(ContextCompat.getColor(this, R.color.draw_point))
             binding.oValue.setBackgroundColor(ContextCompat.getColor(this, R.color.draw_point))
+        } else {
+            binding.xValue.setBackgroundColor(ContextCompat.getColor(this, R.color.gray))
+            binding.oValue.setBackgroundColor(ContextCompat.getColor(this, R.color.gray))
         }
     }
 
@@ -372,4 +379,11 @@ class MainActivity : AppCompatActivity() {
         binding.xValue.text = pointsX.toString()
     }
 
+    fun setDraw(v: View?) {
+        setReset()
+        pointsX++
+        pointsO++
+        setPointValue()
+        setPointColor()
+    }
 }
