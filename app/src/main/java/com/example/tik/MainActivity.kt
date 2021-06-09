@@ -22,15 +22,16 @@ class MainActivity : AppCompatActivity() {
     var thirdFirst = "-"
     var thirdSecond = "-"
     var thirdThird = "-"
-    var checkOne = false
-    var checkTwo = false
-    var checkThree = false
+    var win = false
+    var pointsO = 0
+    var pointsX = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
     }
 
     fun theme(view: View?) {
@@ -61,7 +62,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // RESET
     fun reset(v: View) {
+        setReset()
+    }
+
+    fun setReset() {
         binding.firstFirst.text = "-"
         binding.firstSecond.text = "-"
         binding.firstThird.text = "-"
@@ -78,155 +84,239 @@ class MainActivity : AppCompatActivity() {
         firstFirst = currentlyKey
         typeCheck = 1
         setCurrentlyKey()
-        checkWin()
+        if (binding.firstFirst.text != "-") {
+            checkWin()
+        }
     }
 
     fun first_second(v: View) {
         binding.firstSecond.text = currentlyKey
         firstSecond = currentlyKey
-        typeCheck = 3
+        typeCheck = 2
         setCurrentlyKey()
-        checkWin()
+        if (binding.firstSecond.text != "-") {
+            checkWin()
+        }
     }
 
     fun first_third(v: View) {
-        typeCheck = 8
+        typeCheck = 3
         binding.firstThird.text = currentlyKey
         firstThird = currentlyKey
         setCurrentlyKey()
-        checkWin()
+        if (binding.firstThird.text != "-") {
+            checkWin()
+        }
     }
 
     fun second_first(v: View) {
         binding.secondFirst.text = currentlyKey
         secondFirst = currentlyKey
-        typeCheck = 6
+        typeCheck = 4
         setCurrentlyKey()
-        checkWin()
+        if (binding.secondFirst.text != "-") {
+            checkWin()
+        }
     }
 
     fun second_second(v: View) {
         binding.secondSecond.text = currentlyKey
         secondSecond = currentlyKey
+        typeCheck = 5
         setCurrentlyKey()
-        typeCheck = 7
-        checkWin()
+        if (binding.secondSecond.text != "-") {
+            checkWin()
+        }
     }
 
     fun second_third(v: View) {
         binding.secondThird.text = currentlyKey
         secondThird = currentlyKey
+        typeCheck = 6
         setCurrentlyKey()
-        typeCheck = 4
-        checkWin()
+        if (binding.secondThird.text != "-") {
+            checkWin()
+        }
     }
 
     fun third_first(v: View) {
         binding.thirdFirst.text = currentlyKey
         thirdFirst = currentlyKey
+        typeCheck = 7
         setCurrentlyKey()
-        typeCheck = 9
-        checkWin()
+        if (binding.thirdFirst.text != "-") {
+            checkWin()
+        }
     }
 
     fun third_second(v: View) {
         binding.thirdSecond.text = currentlyKey
         thirdSecond = currentlyKey
+        typeCheck = 8
         setCurrentlyKey()
-        typeCheck = 5
-        checkWin()
+        if (binding.thirdSecond.text != "-") {
+            checkWin()
+        }
     }
 
     fun third_third(v: View) {
         binding.thirdThird.text = currentlyKey
         thirdThird = currentlyKey
+        typeCheck = 9
         setCurrentlyKey()
-        typeCheck = 2
-        checkWin()
+        if (binding.thirdThird.text != "-") {
+            checkWin()
+        }
     }
 
     // Points
     fun checkWin() {
         when (typeCheck) {
+            // FIRST LINE
             // first first
             1 -> {
-                checkOne = firstFirst == firstSecond && firstSecond == firstThird
-                checkTwo = firstFirst == secondFirst && secondFirst == thirdFirst
-                checkThree = firstFirst == secondSecond && secondSecond == thirdThird
-                getWin()
-            }
-            // third third
-            2 -> {
-                checkOne = firstThird == secondThird && secondThird == thirdThird
-                checkTwo = thirdFirst == thirdSecond && thirdSecond == thirdThird
-                checkThree = firstFirst == secondSecond && secondSecond == thirdThird
-                getWin()
+                firstLine()
+                firstColumn()
+                leftRightDiagonal()
+
             }
 
             // first Second
+            2 -> {
+                firstLine()
+                secondColumn()
+
+            }
+
+            // first Third
             3 -> {
-                Toast.makeText(applicationContext, "chama", Toast.LENGTH_SHORT).show()
+                firstLine()
+                thirdColumn()
+                rightLeftDiagonal()
 
-                checkOne = firstFirst == firstSecond && firstSecond == firstThird
-                checkTwo = secondFirst == secondSecond && secondSecond == secondThird
-                checkThree = true
-                getWin()
-                checkThree = false
             }
-            // second third
+
+            // SECOND LINE
+            // Second first
             4 -> {
-                checkOne = secondFirst == secondSecond && secondSecond == secondThird
-                checkTwo = firstThird == secondThird && secondThird == thirdThird
-                checkThree = true
-                getWin()
-                checkThree = false
+                secondLine()
+                firstColumn()
 
-            } // third second
+            }
+
+            // Second second
             5 -> {
-                checkOne = firstThird == secondThird && secondThird == thirdThird
-                checkTwo = thirdFirst == thirdSecond && thirdSecond == thirdThird
-                checkThree = true
-                getWin()
-                checkThree = false
+                secondColumn()
+                secondLine()
+                leftRightDiagonal()
+                rightLeftDiagonal()
+            }
 
-            } // Second first
+            // Second third
             6 -> {
-                checkOne = secondFirst == secondSecond && secondSecond == secondThird
-                checkTwo = firstFirst == firstSecond && firstSecond == firstThird
-                checkThree = true
-                getWin()
-                checkThree = false
+                secondLine()
+                thirdColumn()
+
             }
-            // second second
-            7 -> {
-                checkOne = secondFirst == secondSecond && secondSecond == secondThird
-                checkTwo = firstSecond == secondSecond && secondSecond == thirdSecond
-//                firstThird == secondSecond && secondSecond == thirdFirst
-                checkThree = true
-                getWin()
-                checkThree = false
-            }
-            // first third
-            8 -> {
-                checkOne = firstFirst == firstSecond && firstSecond == firstThird
-                checkTwo = firstFirst == secondFirst && secondFirst == thirdFirst
-                checkThree = firstFirst == secondSecond && secondSecond == thirdThird
-                getWin()
-            }
+
+            // THIRD LINE
             // third first
+            7 -> {
+                thirdLine()
+                firstColumn()
+                rightLeftDiagonal()
+            }
+            // third second
+            8 -> {
+                thirdLine()
+                secondColumn()
+            }
+
+            // third third
             9 -> {
-                checkOne = firstThird == secondThird && secondThird == thirdThird
-                checkTwo = thirdFirst == thirdSecond && thirdSecond == thirdThird
-                checkThree = firstFirst == secondSecond && secondSecond == thirdThird
-                getWin()
+                thirdLine()
+                thirdColumn()
+            }
+
+        }
+    }
+    fun firstLine() {
+        if (!win) {
+            win = firstFirst == firstSecond && firstSecond == firstThird
+            setPoint()
+        }
+    }
+
+    fun secondLine() {
+        if (!win) {
+            win = secondFirst == secondSecond && secondSecond == secondThird
+            setPoint()
+        }
+    }
+
+    fun thirdLine() {
+        if (!win) {
+            win = thirdFirst == thirdSecond && thirdSecond == thirdThird
+        }
+        setPoint()
+    }
+
+    fun firstColumn() {
+        if (!win) {
+            win = firstFirst == secondFirst && secondFirst == thirdFirst
+            setPoint()
+        }
+    }
+
+    fun secondColumn() {
+        if (!win) {
+            win = firstSecond == secondSecond && secondSecond == thirdSecond
+            setPoint()
+        }
+    }
+
+    fun thirdColumn() {
+        if (!win) {
+            win = firstThird == secondThird && secondThird == thirdThird
+            setPoint()
+        }
+    }
+
+    fun leftRightDiagonal() {
+        if (!win) {
+            win = firstFirst == secondSecond && secondSecond == thirdThird
+            setPoint()
+        }
+    }
+
+    fun rightLeftDiagonal() {
+        if (!win) {
+            win = firstThird == secondSecond && secondSecond == thirdFirst
+            setPoint()
+        }
+    }
+
+    // Set point
+    fun setPoint() {
+        Toast.makeText(applicationContext, "chama", Toast.LENGTH_SHORT).show()
+        if (win) {
+            if (currentlyKey == "O") {
+                pointsX++
+                setReset()
+                setPointValue()
+                win = false
+            } else if (currentlyKey == "X") {
+                pointsO++
+                setReset()
+                setPointValue()
+                win = false
             }
         }
     }
 
-    fun getWin() {
-
-        if (checkOne || checkTwo || checkThree) {
-//            Toast.makeText(applicationContext, "chama", Toast.LENGTH_SHORT).show()
-        }
+    fun setPointValue() {
+        binding.oValue.text = pointsO.toString()
+        binding.xValue.text = pointsX.toString()
     }
+
 }
