@@ -2,8 +2,8 @@
     <string name="app_name">tik</string>
     <string name="title_app">TIC TAC TOE</string>
     <string name="reset">Reset</string>
-    <string name="o_label">O - </string>
-    <string name="x_label">X - </string>
+    <string name="o_label">O</string>
+    <string name="x_label">X</string>
     <string name="o_value">0</string>
     <string name="x_value">0</string>
 </resources>
