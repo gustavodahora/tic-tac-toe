@@ -22,7 +22,7 @@
     <Button
         android:id="@+id/draw_btn"
         android:layout_width="120dp"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
@@ -40,10 +40,10 @@
     <Button
         android:id="@+id/reset_btn2"
         android:layout_width="120dp"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:onClick="reset"
@@ -58,7 +58,7 @@
     <TextView
         android:id="@+id/o_label"
         android:layout_width="50dp"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:background="@color/brown_light"
@@ -73,7 +73,7 @@
     <TextView
         android:id="@+id/x_label"
         android:layout_width="50dp"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
@@ -89,7 +89,7 @@
     <TextView
         android:id="@+id/o_value"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:background="@android:color/darker_gray"
@@ -106,7 +106,7 @@
     <TextView
         android:id="@+id/x_value"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"

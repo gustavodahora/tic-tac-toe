@@ -311,6 +311,7 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+
     fun firstLine() {
         if (!win && startCheck) {
             win = firstFirst == firstSecond && firstSecond == firstThird
