@@ -77,6 +77,16 @@ class MainActivity : AppCompatActivity() {
         binding.thirdFirst.text = "-"
         binding.thirdSecond.text = "-"
         binding.thirdThird.text = "-"
+
+        firstFirst = "-"
+        firstSecond = "-"
+        firstThird = "-"
+        secondFirst = "-"
+        secondSecond = "-"
+        secondThird = "-"
+        thirdFirst = "-"
+        thirdSecond = "-"
+        thirdThird = "-"
     }
 
     fun first_first(v: View) {
