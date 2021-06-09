@@ -72,15 +72,18 @@ class MainActivity : AppCompatActivity() {
         } else {
             currentlyKey = "O"
         }
+        resetTicColor()
     }
 
     // RESET
     fun reset(v: View) {
+        startCheck = true
         setReset()
         pointsX = 0
         pointsO = 0
         setPointValue()
         setPointColor()
+        resetTicColor()
     }
 
     fun setReset() {
@@ -106,92 +109,111 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun first_first(v: View) {
-        binding.firstFirst.text = currentlyKey
-        firstFirst = currentlyKey
-        typeCheck = 1
-        setCurrentlyKey()
-        if (binding.firstFirst.text != " ") {
-            checkWin()
+        if (startCheck) {
+            binding.firstFirst.text = currentlyKey
+            firstFirst = currentlyKey
+            typeCheck = 1
+            setCurrentlyKey()
+            if (binding.firstFirst.text != " ") {
+                checkWin()
+            }
         }
     }
 
     fun first_second(v: View) {
-        binding.firstSecond.text = currentlyKey
-        firstSecond = currentlyKey
-        typeCheck = 2
-        setCurrentlyKey()
-        if (binding.firstSecond.text != " ") {
-            checkWin()
+        if (startCheck) {
+            binding.firstSecond.text = currentlyKey
+            firstSecond = currentlyKey
+            typeCheck = 2
+            setCurrentlyKey()
+            if (binding.firstSecond.text != " ") {
+                checkWin()
+            }
         }
+
     }
 
     fun first_third(v: View) {
-        typeCheck = 3
-        binding.firstThird.text = currentlyKey
-        firstThird = currentlyKey
-        setCurrentlyKey()
-        if (binding.firstThird.text != " ") {
-            checkWin()
+        if (startCheck) {
+            typeCheck = 3
+            binding.firstThird.text = currentlyKey
+            firstThird = currentlyKey
+            setCurrentlyKey()
+            if (binding.firstThird.text != " ") {
+                checkWin()
+            }
         }
     }
 
     fun second_first(v: View) {
-        binding.secondFirst.text = currentlyKey
-        secondFirst = currentlyKey
-        typeCheck = 4
-        setCurrentlyKey()
-        if (binding.secondFirst.text != " ") {
-            checkWin()
+        if (startCheck) {
+            binding.secondFirst.text = currentlyKey
+            secondFirst = currentlyKey
+            typeCheck = 4
+            setCurrentlyKey()
+            if (binding.secondFirst.text != " ") {
+                checkWin()
+            }
         }
     }
 
     fun second_second(v: View) {
-        binding.secondSecond.text = currentlyKey
-        secondSecond = currentlyKey
-        typeCheck = 5
-        setCurrentlyKey()
-        if (binding.secondSecond.text != " ") {
-            checkWin()
+        if (startCheck) {
+            binding.secondSecond.text = currentlyKey
+            secondSecond = currentlyKey
+            typeCheck = 5
+            setCurrentlyKey()
+            if (binding.secondSecond.text != " ") {
+                checkWin()
+            }
         }
     }
 
     fun second_third(v: View) {
-        binding.secondThird.text = currentlyKey
-        secondThird = currentlyKey
-        typeCheck = 6
-        setCurrentlyKey()
-        if (binding.secondThird.text != " ") {
-            checkWin()
+        if (startCheck) {
+            binding.secondThird.text = currentlyKey
+            secondThird = currentlyKey
+            typeCheck = 6
+            setCurrentlyKey()
+            if (binding.secondThird.text != " ") {
+                checkWin()
+            }
         }
     }
 
     fun third_first(v: View) {
-        binding.thirdFirst.text = currentlyKey
-        thirdFirst = currentlyKey
-        typeCheck = 7
-        setCurrentlyKey()
-        if (binding.thirdFirst.text != " ") {
-            checkWin()
+        if (startCheck) {
+            binding.thirdFirst.text = currentlyKey
+            thirdFirst = currentlyKey
+            typeCheck = 7
+            setCurrentlyKey()
+            if (binding.thirdFirst.text != " ") {
+                checkWin()
+            }
         }
     }
 
     fun third_second(v: View) {
-        binding.thirdSecond.text = currentlyKey
-        thirdSecond = currentlyKey
-        typeCheck = 8
-        setCurrentlyKey()
-        if (binding.thirdSecond.text != " ") {
-            checkWin()
+        if (startCheck) {
+            binding.thirdSecond.text = currentlyKey
+            thirdSecond = currentlyKey
+            typeCheck = 8
+            setCurrentlyKey()
+            if (binding.thirdSecond.text != " ") {
+                checkWin()
+            }
         }
     }
 
     fun third_third(v: View) {
-        binding.thirdThird.text = currentlyKey
-        thirdThird = currentlyKey
-        typeCheck = 9
-        setCurrentlyKey()
-        if (binding.thirdThird.text != " ") {
-            checkWin()
+        if (startCheck) {
+            binding.thirdThird.text = currentlyKey
+            thirdThird = currentlyKey
+            typeCheck = 9
+            setCurrentlyKey()
+            if (binding.thirdThird.text != " ") {
+                checkWin()
+            }
         }
     }
 
@@ -205,14 +227,12 @@ class MainActivity : AppCompatActivity() {
                 firstLine()
                 firstColumn()
                 leftRightDiagonal()
-                startCheck = true
             }
 
             // first Second
             2 -> {
                 firstLine()
                 secondColumn()
-                startCheck = true
             }
 
             // first Third
@@ -220,7 +240,6 @@ class MainActivity : AppCompatActivity() {
                 firstLine()
                 thirdColumn()
                 rightLeftDiagonal()
-                startCheck = true
             }
 
             // SECOND LINE
@@ -228,7 +247,6 @@ class MainActivity : AppCompatActivity() {
             4 -> {
                 secondLine()
                 firstColumn()
-                startCheck = true
             }
 
             // Second second
@@ -237,14 +255,12 @@ class MainActivity : AppCompatActivity() {
                 secondLine()
                 leftRightDiagonal()
                 rightLeftDiagonal()
-                startCheck = true
             }
 
             // Second third
             6 -> {
                 secondLine()
                 thirdColumn()
-                startCheck = true
             }
 
             // THIRD LINE
@@ -253,20 +269,17 @@ class MainActivity : AppCompatActivity() {
                 thirdLine()
                 firstColumn()
                 rightLeftDiagonal()
-                startCheck = true
             }
             // third second
             8 -> {
                 thirdLine()
                 secondColumn()
-                startCheck = true
             }
 
             // third third
             9 -> {
                 thirdLine()
                 thirdColumn()
-                startCheck = true
             }
 
         }
@@ -274,6 +287,11 @@ class MainActivity : AppCompatActivity() {
     fun firstLine() {
         if (!win && startCheck) {
             win = firstFirst == firstSecond && firstSecond == firstThird
+            if (win) {
+                binding.secondFirst.setTextColor(ContextCompat.getColor(this, R.color.winning))
+                binding.secondSecond.setTextColor(ContextCompat.getColor(this, R.color.winning))
+                binding.secondThird.setTextColor(ContextCompat.getColor(this, R.color.winning))
+            }
             setPoint()
         }
         win = false
@@ -282,6 +300,11 @@ class MainActivity : AppCompatActivity() {
     fun secondLine() {
         if (!win && startCheck) {
             win = secondFirst == secondSecond && secondSecond == secondThird
+            if (win) {
+                binding.secondFirst.setTextColor(ContextCompat.getColor(this, R.color.winning))
+                binding.secondSecond.setTextColor(ContextCompat.getColor(this, R.color.winning))
+                binding.secondThird.setTextColor(ContextCompat.getColor(this, R.color.winning))
+            }
             setPoint()
         }
         win = false
@@ -290,6 +313,11 @@ class MainActivity : AppCompatActivity() {
     fun thirdLine() {
         if (!win && startCheck) {
             win = thirdFirst == thirdSecond && thirdSecond == thirdThird
+            if (win) {
+                binding.thirdFirst.setTextColor(ContextCompat.getColor(this, R.color.winning))
+                binding.thirdSecond.setTextColor(ContextCompat.getColor(this, R.color.winning))
+                binding.thirdThird.setTextColor(ContextCompat.getColor(this, R.color.winning))
+            }
             setPoint()
         }
         win = false
@@ -298,6 +326,11 @@ class MainActivity : AppCompatActivity() {
     fun firstColumn() {
         if (!win && startCheck) {
             win = firstFirst == secondFirst && secondFirst == thirdFirst
+            if (win) {
+                binding.firstFirst.setTextColor(ContextCompat.getColor(this, R.color.winning))
+                binding.secondFirst.setTextColor(ContextCompat.getColor(this, R.color.winning))
+                binding.thirdFirst.setTextColor(ContextCompat.getColor(this, R.color.winning))
+            }
             setPoint()
         }
         win = false
@@ -306,6 +339,11 @@ class MainActivity : AppCompatActivity() {
     fun secondColumn() {
         if (!win && startCheck) {
             win = firstSecond == secondSecond && secondSecond == thirdSecond
+            if (win) {
+                binding.firstSecond.setTextColor(ContextCompat.getColor(this, R.color.winning))
+                binding.secondSecond.setTextColor(ContextCompat.getColor(this, R.color.winning))
+                binding.thirdSecond.setTextColor(ContextCompat.getColor(this, R.color.winning))
+            }
             setPoint()
         }
         win = false
@@ -314,6 +352,11 @@ class MainActivity : AppCompatActivity() {
     fun thirdColumn() {
         if (!win && startCheck) {
             win = firstThird == secondThird && secondThird == thirdThird
+            if (win) {
+                binding.firstThird.setTextColor(ContextCompat.getColor(this, R.color.winning))
+                binding.secondThird.setTextColor(ContextCompat.getColor(this, R.color.winning))
+                binding.thirdThird.setTextColor(ContextCompat.getColor(this, R.color.winning))
+            }
             setPoint()
         }
         win = false
@@ -322,6 +365,11 @@ class MainActivity : AppCompatActivity() {
     fun leftRightDiagonal() {
         if (!win && startCheck) {
             win = firstFirst == secondSecond && secondSecond == thirdThird
+            if (win) {
+                binding.firstFirst.setTextColor(ContextCompat.getColor(this, R.color.winning))
+                binding.secondSecond.setTextColor(ContextCompat.getColor(this, R.color.winning))
+                binding.thirdThird.setTextColor(ContextCompat.getColor(this, R.color.winning))
+            }
             setPoint()
         }
         win = false
@@ -330,6 +378,11 @@ class MainActivity : AppCompatActivity() {
     fun rightLeftDiagonal() {
         if (!win && startCheck) {
             win = firstThird == secondSecond && secondSecond == thirdFirst
+            if (win) {
+                binding.firstThird.setTextColor(ContextCompat.getColor(this, R.color.winning))
+                binding.secondSecond.setTextColor(ContextCompat.getColor(this, R.color.winning))
+                binding.thirdFirst.setTextColor(ContextCompat.getColor(this, R.color.winning))
+            }
             setPoint()
         }
         win = false
@@ -337,25 +390,28 @@ class MainActivity : AppCompatActivity() {
 
     // Set point
     fun setPoint() {
-
         if (win) {
             if (currentlyKey == "O") {
                 pointsX++
-                setReset()
                 setPointValue()
                 win = false
                 startCheck = false
                 setPointColor()
+                setWin()
             } else if (currentlyKey == "X") {
                 pointsO++
-                setReset()
                 setPointValue()
                 win = false
                 startCheck = false
                 setPointColor()
+                setWin()
             }
             win = false
         }
+    }
+
+    fun setWin() {
+
     }
 
     fun setPointColor() {
@@ -380,10 +436,47 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun setDraw(v: View?) {
+        startCheck = true
         setReset()
         pointsX++
         pointsO++
         setPointValue()
         setPointColor()
+        resetTicColor()
+    }
+
+    fun newPoint(v: View?) {
+        startCheck = true
+        setReset()
+        setPointValue()
+        setPointColor()
+        resetTicColor()
+    }
+
+    private fun resetTicColor() {
+
+        if (checkedThemeGlobal) {
+            binding.firstFirst.setTextColor(ContextCompat.getColor(this, R.color.white))
+            binding.firstSecond.setTextColor(ContextCompat.getColor(this, R.color.white))
+            binding.firstThird.setTextColor(ContextCompat.getColor(this, R.color.white))
+            binding.secondFirst.setTextColor(ContextCompat.getColor(this, R.color.white))
+            binding.secondSecond.setTextColor(ContextCompat.getColor(this, R.color.white))
+            binding.secondThird.setTextColor(ContextCompat.getColor(this, R.color.white))
+            binding.thirdFirst.setTextColor(ContextCompat.getColor(this, R.color.white))
+            binding.thirdSecond.setTextColor(ContextCompat.getColor(this, R.color.white))
+            binding.thirdThird.setTextColor(ContextCompat.getColor(this, R.color.white))
+        } else {
+            binding.firstFirst.setTextColor(ContextCompat.getColor(this, R.color.black))
+            binding.firstSecond.setTextColor(ContextCompat.getColor(this, R.color.black))
+            binding.firstThird.setTextColor(ContextCompat.getColor(this, R.color.black))
+            binding.secondFirst.setTextColor(ContextCompat.getColor(this, R.color.black))
+            binding.secondSecond.setTextColor(ContextCompat.getColor(this, R.color.black))
+            binding.secondThird.setTextColor(ContextCompat.getColor(this, R.color.black))
+            binding.thirdFirst.setTextColor(ContextCompat.getColor(this, R.color.black))
+            binding.thirdSecond.setTextColor(ContextCompat.getColor(this, R.color.black))
+            binding.thirdThird.setTextColor(ContextCompat.getColor(this, R.color.black))
+        }
+
+
     }
 }

@@ -18,4 +18,6 @@
     <color name="winning">@android:color/holo_green_light</color>
     <color name="draw_point">#FFD500</color>
     <color name="draw">@android:color/holo_orange_dark</color>
+    <color name="start">#59C645</color>
+
 </resources>

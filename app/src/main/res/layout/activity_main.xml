@@ -381,4 +381,25 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/tic_tac_toe_logo_transparent" />
 
+    <Button
+        android:id="@+id/new_game"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="newPoint"
+        android:text="@string/new_game"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/x_value" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
