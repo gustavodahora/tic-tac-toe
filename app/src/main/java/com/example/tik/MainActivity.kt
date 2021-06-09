@@ -1,11 +1,13 @@
 package com.example.tik
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.content.ContextCompat
 import com.example.tik.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -182,6 +184,7 @@ class MainActivity : AppCompatActivity() {
 
     // Points
     fun checkWin() {
+
         when (typeCheck) {
             // FIRST LINE
             // first first
@@ -260,7 +263,6 @@ class MainActivity : AppCompatActivity() {
             win = firstFirst == firstSecond && firstSecond == firstThird
             setPoint()
         }
-
         win = false
     }
 
@@ -322,6 +324,7 @@ class MainActivity : AppCompatActivity() {
 
     // Set point
     fun setPoint() {
+
         if (win) {
             if (currentlyKey == "O") {
                 pointsX++
@@ -329,14 +332,29 @@ class MainActivity : AppCompatActivity() {
                 setPointValue()
                 win = false
                 startCheck = false
+                setPointColor()
             } else if (currentlyKey == "X") {
                 pointsO++
                 setReset()
                 setPointValue()
                 win = false
                 startCheck = false
+                setPointColor()
             }
             win = false
+        }
+    }
+
+    fun setPointColor() {
+        if (pointsO > pointsX) {
+            binding.oValue.setBackgroundColor(ContextCompat.getColor(this, R.color.winning))
+            binding.xValue.setBackgroundColor(ContextCompat.getColor(this, R.color.gray))
+        } else if (pointsX > pointsO) {
+            binding.xValue.setBackgroundColor(ContextCompat.getColor(this, R.color.winning))
+            binding.oValue.setBackgroundColor(ContextCompat.getColor(this, R.color.gray))
+        } else {
+            binding.xValue.setBackgroundColor(ContextCompat.getColor(this, R.color.draw_point))
+            binding.oValue.setBackgroundColor(ContextCompat.getColor(this, R.color.draw_point))
         }
     }
 

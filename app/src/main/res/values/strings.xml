@@ -6,4 +6,5 @@
     <string name="x_label">X</string>
     <string name="o_value">0</string>
     <string name="x_value">0</string>
+    <string name="draw">Draw</string>
 </resources>

@@ -11,6 +11,11 @@
     <color name="brown">#753F23</color>
     <color name="brown_light">#E9BE97</color>
     <color name="blue">#5CA6E6</color>
-    <color name="gray">#303030</color>
+    <color name="gray">#FFAAAAAA</color>
     <color name="blue_dark">#3637B3</color>
+
+<!-- Game points-->
+    <color name="winning">@android:color/holo_green_light</color>
+    <color name="draw_point">#FFD500</color>
+    <color name="draw">@android:color/holo_orange_dark</color>
 </resources>
