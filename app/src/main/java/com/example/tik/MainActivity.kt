@@ -13,18 +13,19 @@ class MainActivity : AppCompatActivity() {
     private var checkedThemeGlobal = false
     private var currentlyKey = "O"
     private var typeCheck = 1
-    var firstFirst = "-"
-    var firstSecond = "-"
-    var firstThird = "-"
-    var secondFirst = "-"
-    var secondSecond = "-"
-    var secondThird = "-"
-    var thirdFirst = "-"
-    var thirdSecond = "-"
-    var thirdThird = "-"
+    var firstFirst = " "
+    var firstSecond = " "
+    var firstThird = " "
+    var secondFirst = " "
+    var secondSecond = " "
+    var secondThird = " "
+    var thirdFirst = " "
+    var thirdSecond = " "
+    var thirdThird = " "
     var win = false
     var pointsO = 0
     var pointsX = 0
+    var startCheck = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,25 +69,25 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun setReset() {
-        binding.firstFirst.text = "-"
-        binding.firstSecond.text = "-"
-        binding.firstThird.text = "-"
-        binding.secondFirst.text = "-"
-        binding.secondSecond.text = "-"
-        binding.secondThird.text = "-"
-        binding.thirdFirst.text = "-"
-        binding.thirdSecond.text = "-"
-        binding.thirdThird.text = "-"
+        firstFirst = " "
+        firstSecond = " "
+        firstThird = " "
+        secondFirst = " "
+        secondSecond = " "
+        secondThird = " "
+        thirdFirst = " "
+        thirdSecond = " "
+        thirdThird = " "
 
-        firstFirst = "-"
-        firstSecond = "-"
-        firstThird = "-"
-        secondFirst = "-"
-        secondSecond = "-"
-        secondThird = "-"
-        thirdFirst = "-"
-        thirdSecond = "-"
-        thirdThird = "-"
+        binding.firstFirst.text = " "
+        binding.firstSecond.text = " "
+        binding.firstThird.text = " "
+        binding.secondFirst.text = " "
+        binding.secondSecond.text = " "
+        binding.secondThird.text = " "
+        binding.thirdFirst.text = " "
+        binding.thirdSecond.text = " "
+        binding.thirdThird.text = " "
     }
 
     fun first_first(v: View) {
@@ -94,7 +95,7 @@ class MainActivity : AppCompatActivity() {
         firstFirst = currentlyKey
         typeCheck = 1
         setCurrentlyKey()
-        if (binding.firstFirst.text != "-") {
+        if (binding.firstFirst.text != " ") {
             checkWin()
         }
     }
@@ -104,7 +105,7 @@ class MainActivity : AppCompatActivity() {
         firstSecond = currentlyKey
         typeCheck = 2
         setCurrentlyKey()
-        if (binding.firstSecond.text != "-") {
+        if (binding.firstSecond.text != " ") {
             checkWin()
         }
     }
@@ -114,7 +115,7 @@ class MainActivity : AppCompatActivity() {
         binding.firstThird.text = currentlyKey
         firstThird = currentlyKey
         setCurrentlyKey()
-        if (binding.firstThird.text != "-") {
+        if (binding.firstThird.text != " ") {
             checkWin()
         }
     }
@@ -124,7 +125,7 @@ class MainActivity : AppCompatActivity() {
         secondFirst = currentlyKey
         typeCheck = 4
         setCurrentlyKey()
-        if (binding.secondFirst.text != "-") {
+        if (binding.secondFirst.text != " ") {
             checkWin()
         }
     }
@@ -134,7 +135,7 @@ class MainActivity : AppCompatActivity() {
         secondSecond = currentlyKey
         typeCheck = 5
         setCurrentlyKey()
-        if (binding.secondSecond.text != "-") {
+        if (binding.secondSecond.text != " ") {
             checkWin()
         }
     }
@@ -144,7 +145,7 @@ class MainActivity : AppCompatActivity() {
         secondThird = currentlyKey
         typeCheck = 6
         setCurrentlyKey()
-        if (binding.secondThird.text != "-") {
+        if (binding.secondThird.text != " ") {
             checkWin()
         }
     }
@@ -154,7 +155,7 @@ class MainActivity : AppCompatActivity() {
         thirdFirst = currentlyKey
         typeCheck = 7
         setCurrentlyKey()
-        if (binding.thirdFirst.text != "-") {
+        if (binding.thirdFirst.text != " ") {
             checkWin()
         }
     }
@@ -164,7 +165,7 @@ class MainActivity : AppCompatActivity() {
         thirdSecond = currentlyKey
         typeCheck = 8
         setCurrentlyKey()
-        if (binding.thirdSecond.text != "-") {
+        if (binding.thirdSecond.text != " ") {
             checkWin()
         }
     }
@@ -174,7 +175,7 @@ class MainActivity : AppCompatActivity() {
         thirdThird = currentlyKey
         typeCheck = 9
         setCurrentlyKey()
-        if (binding.thirdThird.text != "-") {
+        if (binding.thirdThird.text != " ") {
             checkWin()
         }
     }
@@ -188,14 +189,14 @@ class MainActivity : AppCompatActivity() {
                 firstLine()
                 firstColumn()
                 leftRightDiagonal()
-
+                startCheck = true
             }
 
             // first Second
             2 -> {
                 firstLine()
                 secondColumn()
-
+                startCheck = true
             }
 
             // first Third
@@ -203,7 +204,7 @@ class MainActivity : AppCompatActivity() {
                 firstLine()
                 thirdColumn()
                 rightLeftDiagonal()
-
+                startCheck = true
             }
 
             // SECOND LINE
@@ -211,7 +212,7 @@ class MainActivity : AppCompatActivity() {
             4 -> {
                 secondLine()
                 firstColumn()
-
+                startCheck = true
             }
 
             // Second second
@@ -220,13 +221,14 @@ class MainActivity : AppCompatActivity() {
                 secondLine()
                 leftRightDiagonal()
                 rightLeftDiagonal()
+                startCheck = true
             }
 
             // Second third
             6 -> {
                 secondLine()
                 thirdColumn()
-
+                startCheck = true
             }
 
             // THIRD LINE
@@ -235,92 +237,106 @@ class MainActivity : AppCompatActivity() {
                 thirdLine()
                 firstColumn()
                 rightLeftDiagonal()
+                startCheck = true
             }
             // third second
             8 -> {
                 thirdLine()
                 secondColumn()
+                startCheck = true
             }
 
             // third third
             9 -> {
                 thirdLine()
                 thirdColumn()
+                startCheck = true
             }
 
         }
     }
     fun firstLine() {
-        if (!win) {
+        if (!win && startCheck) {
             win = firstFirst == firstSecond && firstSecond == firstThird
             setPoint()
         }
+
+        win = false
     }
 
     fun secondLine() {
-        if (!win) {
+        if (!win && startCheck) {
             win = secondFirst == secondSecond && secondSecond == secondThird
             setPoint()
         }
+        win = false
     }
 
     fun thirdLine() {
-        if (!win) {
+        if (!win && startCheck) {
             win = thirdFirst == thirdSecond && thirdSecond == thirdThird
+            setPoint()
         }
-        setPoint()
+        win = false
     }
 
     fun firstColumn() {
-        if (!win) {
+        if (!win && startCheck) {
             win = firstFirst == secondFirst && secondFirst == thirdFirst
             setPoint()
         }
+        win = false
     }
 
     fun secondColumn() {
-        if (!win) {
+        if (!win && startCheck) {
             win = firstSecond == secondSecond && secondSecond == thirdSecond
             setPoint()
         }
+        win = false
     }
 
     fun thirdColumn() {
-        if (!win) {
+        if (!win && startCheck) {
             win = firstThird == secondThird && secondThird == thirdThird
             setPoint()
         }
+        win = false
     }
 
     fun leftRightDiagonal() {
-        if (!win) {
+        if (!win && startCheck) {
             win = firstFirst == secondSecond && secondSecond == thirdThird
             setPoint()
         }
+        win = false
     }
 
     fun rightLeftDiagonal() {
-        if (!win) {
+        if (!win && startCheck) {
             win = firstThird == secondSecond && secondSecond == thirdFirst
             setPoint()
         }
+        win = false
     }
 
     // Set point
     fun setPoint() {
-        Toast.makeText(applicationContext, "chama", Toast.LENGTH_SHORT).show()
         if (win) {
             if (currentlyKey == "O") {
                 pointsX++
                 setReset()
                 setPointValue()
                 win = false
+                startCheck = false
             } else if (currentlyKey == "X") {
                 pointsO++
                 setReset()
                 setPointValue()
                 win = false
+                startCheck = false
             }
+            win = false
         }
     }
 

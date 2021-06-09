@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:onClick="first_second"
     tools:context=".MainActivity">
 
     <TextView
@@ -96,126 +97,255 @@
         app:layout_constraintStart_toEndOf="@+id/o_label"
         app:layout_constraintTop_toBottomOf="@+id/o_value" />
 
-    <LinearLayout
-        android:id="@+id/tic_tac_toe"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="128dp"
-        android:orientation="vertical"
+    <View
+        android:id="@+id/column1"
+        android:layout_width="20dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginLeft="96dp"
+        android:background="?android:attr/textColorSecondary"
+        app:layout_constraintBottom_toBottomOf="@+id/line2"
+        app:layout_constraintStart_toStartOf="@+id/line1"
+        app:layout_constraintTop_toTopOf="@+id/line1" />
+
+    <View
+        android:id="@+id/column2"
+        android:layout_width="20dp"
+        android:layout_height="300dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginRight="96dp"
+        android:background="?android:attr/textColorSecondary"
+        app:layout_constraintBottom_toBottomOf="@+id/line2"
+        app:layout_constraintEnd_toEndOf="@+id/line1"
+        app:layout_constraintTop_toTopOf="@+id/line1" />
+
+    <View
+        android:id="@+id/first_first_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="first_first"
+        app:layout_constraintBottom_toTopOf="@+id/line1"
+        app:layout_constraintEnd_toStartOf="@+id/column1"
+        app:layout_constraintStart_toStartOf="@+id/line1"
+        app:layout_constraintTop_toTopOf="@+id/column1" />
+
+    <TextView
+        android:id="@+id/first_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text=" "
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/first_first_view"
+        app:layout_constraintEnd_toEndOf="@+id/first_first_view"
+        app:layout_constraintStart_toStartOf="@+id/first_first_view"
+        app:layout_constraintTop_toTopOf="@+id/first_first_view" />
+
+    <View
+        android:id="@+id/first_second_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/line1"
+        app:layout_constraintEnd_toStartOf="@+id/column2"
+        app:layout_constraintStart_toEndOf="@+id/column1"
+        app:layout_constraintTop_toTopOf="@+id/column2" />
+
+    <TextView
+        android:id="@+id/first_second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text=" "
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/first_second_view"
+        app:layout_constraintEnd_toEndOf="@+id/first_second_view"
+        app:layout_constraintStart_toStartOf="@+id/first_second_view"
+        app:layout_constraintTop_toTopOf="@+id/first_second_view" />
+
+    <View
+        android:id="@+id/first_third_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="first_third"
+        app:layout_constraintBottom_toBottomOf="@+id/first_second_view"
+        app:layout_constraintEnd_toEndOf="@+id/line1"
+        app:layout_constraintStart_toEndOf="@+id/column2"
+        app:layout_constraintTop_toTopOf="@+id/column2" />
+
+    <TextView
+        android:id="@+id/first_third"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text=" "
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/first_third_view"
+        app:layout_constraintEnd_toEndOf="@+id/first_third_view"
+        app:layout_constraintStart_toStartOf="@+id/first_third_view"
+        app:layout_constraintTop_toTopOf="@+id/first_third_view" />
+
+    <View
+        android:id="@+id/line1"
+        android:layout_width="300dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="200dp"
+        android:background="?android:attr/textColorSecondary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/x_label">
+        app:layout_constraintTop_toBottomOf="@+id/x_value" />
 
-        <LinearLayout
-            android:id="@+id/first"
-            android:layout_width="200dp"
-            android:layout_height="66dp"
-            android:orientation="horizontal">
+    <View
+        android:id="@+id/second_first_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="second_first"
+        app:layout_constraintBottom_toTopOf="@+id/line2"
+        app:layout_constraintEnd_toStartOf="@+id/column1"
+        app:layout_constraintStart_toStartOf="@+id/line2"
+        app:layout_constraintTop_toBottomOf="@+id/line1" />
 
-            <TextView
-                android:id="@+id/first_first"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:onClick="first_first"
-                android:text="-"
-                android:textSize="24sp" />
+    <TextView
+        android:id="@+id/second_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text=" "
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/second_first_view"
+        app:layout_constraintEnd_toStartOf="@+id/column1"
+        app:layout_constraintStart_toStartOf="@+id/second_first_view"
+        app:layout_constraintTop_toTopOf="@+id/second_first_view" />
 
-            <TextView
-                android:id="@+id/first_second"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:onClick="first_second"
-                android:text="-"
-                android:textSize="24sp" />
+    <View
+        android:id="@+id/second_second_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="second_second"
+        app:layout_constraintBottom_toTopOf="@+id/line2"
+        app:layout_constraintEnd_toStartOf="@+id/column2"
+        app:layout_constraintStart_toEndOf="@+id/column1"
+        app:layout_constraintTop_toBottomOf="@+id/line1" />
 
-            <TextView
-                android:id="@+id/first_third"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:onClick="first_third"
-                android:text="-"
-                android:textSize="24sp" />
-        </LinearLayout>
+    <TextView
+        android:id="@+id/second_second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text=" "
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/second_second_view"
+        app:layout_constraintEnd_toStartOf="@+id/column2"
+        app:layout_constraintStart_toEndOf="@+id/column1"
+        app:layout_constraintTop_toBottomOf="@+id/line1" />
 
-        <LinearLayout
-            android:id="@+id/second"
-            android:layout_width="200dp"
-            android:layout_height="66dp"
-            android:orientation="horizontal">
+    <View
+        android:id="@+id/second_third_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="second_third"
+        app:layout_constraintBottom_toTopOf="@+id/line2"
+        app:layout_constraintEnd_toEndOf="@+id/line2"
+        app:layout_constraintStart_toEndOf="@+id/column2"
+        app:layout_constraintTop_toBottomOf="@+id/line1" />
 
-            <TextView
-                android:id="@+id/second_first"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:onClick="second_first"
-                android:text="-"
-                android:textSize="24sp" />
+    <TextView
+        android:id="@+id/second_third"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:onClick="second_third"
+        android:text=" "
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/second_third_view"
+        app:layout_constraintEnd_toEndOf="@+id/second_third_view"
+        app:layout_constraintStart_toEndOf="@+id/column2"
+        app:layout_constraintTop_toTopOf="@+id/second_third_view" />
 
-            <TextView
-                android:id="@+id/second_second"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:onClick="second_second"
-                android:text="-"
-                android:textSize="24sp" />
+    <View
+        android:id="@+id/line2"
+        android:layout_width="300dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="64dp"
+        android:background="?android:attr/textColorSecondary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line1" />
 
-            <TextView
-                android:id="@+id/second_third"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:onClick="second_third"
-                android:text="-"
-                android:textSize="24sp" />
-        </LinearLayout>
+    <View
+        android:id="@+id/third_first_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="third_first"
+        app:layout_constraintBottom_toBottomOf="@+id/column1"
+        app:layout_constraintEnd_toStartOf="@+id/column1"
+        app:layout_constraintStart_toStartOf="@+id/line2"
+        app:layout_constraintTop_toBottomOf="@+id/line2" />
 
-        <LinearLayout
-            android:id="@+id/third"
-            android:layout_width="200dp"
-            android:layout_height="66dp"
-            android:orientation="horizontal">
+    <TextView
+        android:id="@+id/third_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text=" "
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/third_first_view"
+        app:layout_constraintEnd_toEndOf="@+id/third_first_view"
+        app:layout_constraintStart_toStartOf="@+id/third_first_view"
+        app:layout_constraintTop_toTopOf="@+id/third_first_view" />
 
-            <TextView
-                android:id="@+id/third_first"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:onClick="third_first"
-                android:text="-"
-                android:textSize="24sp" />
+    <View
+        android:id="@+id/third_second_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="third_second"
+        app:layout_constraintBottom_toBottomOf="@+id/column1"
+        app:layout_constraintEnd_toStartOf="@+id/column2"
+        app:layout_constraintStart_toEndOf="@+id/column1"
+        app:layout_constraintTop_toBottomOf="@+id/line2" />
 
-            <TextView
-                android:id="@+id/third_second"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:onClick="third_second"
-                android:text="-"
-                android:textSize="24sp" />
+    <TextView
+        android:id="@+id/third_second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text=" "
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/third_second_view"
+        app:layout_constraintEnd_toEndOf="@+id/third_second_view"
+        app:layout_constraintStart_toStartOf="@+id/third_second_view"
+        app:layout_constraintTop_toBottomOf="@+id/line2" />
 
-            <TextView
-                android:id="@+id/third_third"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:onClick="third_third"
-                android:text="-"
-                android:textSize="24sp" />
-        </LinearLayout>
-    </LinearLayout>
+    <View
+        android:id="@+id/third_first_view3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="third_third"
+        app:layout_constraintBottom_toBottomOf="@+id/column1"
+        app:layout_constraintEnd_toEndOf="@+id/line2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/column2"
+        app:layout_constraintTop_toBottomOf="@+id/line2"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/third_third"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text=" "
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/third_first_view3"
+        app:layout_constraintEnd_toEndOf="@+id/third_first_view3"
+        app:layout_constraintStart_toStartOf="@+id/third_first_view3"
+        app:layout_constraintTop_toTopOf="@+id/third_first_view3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
