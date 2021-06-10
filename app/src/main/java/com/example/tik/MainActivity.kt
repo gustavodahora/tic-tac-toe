@@ -316,9 +316,9 @@ class MainActivity : AppCompatActivity() {
         if (!win && startCheck) {
             win = firstFirst == firstSecond && firstSecond == firstThird
             if (win) {
-                binding.secondFirst.setTextColor(ContextCompat.getColor(this, R.color.winning))
-                binding.secondSecond.setTextColor(ContextCompat.getColor(this, R.color.winning))
-                binding.secondThird.setTextColor(ContextCompat.getColor(this, R.color.winning))
+                binding.firstFirst.setTextColor(ContextCompat.getColor(this, R.color.winning))
+                binding.firstSecond.setTextColor(ContextCompat.getColor(this, R.color.winning))
+                binding.firstThird.setTextColor(ContextCompat.getColor(this, R.color.winning))
             }
             setPoint()
         }
