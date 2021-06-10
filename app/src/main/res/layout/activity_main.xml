@@ -21,11 +21,11 @@
 
     <Button
         android:id="@+id/draw_btn"
-        android:layout_width="120dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="24dp"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:onClick="setDraw"
@@ -35,15 +35,15 @@
         android:textStyle="bold"
         app:backgroundTint="@color/draw"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_logo" />
+        app:layout_constraintTop_toBottomOf="@+id/third_second_view" />
 
     <Button
         android:id="@+id/reset_btn2"
-        android:layout_width="120dp"
+        android:layout_width="wrap_content"
         android:layout_height="45dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="24dp"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:onClick="reset"
@@ -52,30 +52,27 @@
         android:textColor="?attr/colorOnSecondary"
         android:textStyle="bold"
         app:backgroundTint="?attr/colorSecondary"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/draw_btn" />
+        app:layout_constraintStart_toEndOf="@+id/draw_btn"
+        app:layout_constraintTop_toBottomOf="@+id/third_second_view" />
 
     <TextView
         android:id="@+id/o_label"
         android:layout_width="50dp"
         android:layout_height="45dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
         android:background="@color/brown_light"
         android:gravity="center"
         android:text="@string/o_label"
         android:textColor="@color/black"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/draw_btn"
-        app:layout_constraintTop_toTopOf="@+id/draw_btn" />
+        app:layout_constraintEnd_toStartOf="@+id/o_value"
+        app:layout_constraintTop_toBottomOf="@+id/image_logo" />
 
     <TextView
         android:id="@+id/x_label"
         android:layout_width="50dp"
         android:layout_height="45dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
         android:background="@color/brown_light"
         android:gravity="center"
@@ -83,15 +80,16 @@
         android:textColor="@color/black"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/draw_btn"
+        app:layout_constraintEnd_toStartOf="@+id/x_value"
         app:layout_constraintTop_toBottomOf="@+id/o_label" />
 
     <TextView
         android:id="@+id/o_value"
-        android:layout_width="0dp"
+        android:layout_width="150dp"
         android:layout_height="45dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
         android:background="@android:color/darker_gray"
         android:gravity="center"
         android:text="@string/o_value"
@@ -99,17 +97,15 @@
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/o_label"
-        app:layout_constraintTop_toTopOf="@+id/draw_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/image_logo" />
 
     <TextView
         android:id="@+id/x_value"
-        android:layout_width="0dp"
+        android:layout_width="150dp"
         android:layout_height="45dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
         android:background="@android:color/darker_gray"
         android:gravity="center"
         android:text="@string/x_value"
@@ -117,7 +113,6 @@
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/x_label"
         app:layout_constraintTop_toBottomOf="@+id/o_value" />
 
     <View
@@ -214,7 +209,7 @@
         android:id="@+id/line1"
         android:layout_width="300dp"
         android:layout_height="10dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="128dp"
         android:background="?attr/colorOnSurface"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -384,12 +379,12 @@
     <Button
         android:id="@+id/new_game"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:onClick="newPoint"
@@ -399,7 +394,7 @@
         android:textStyle="bold"
         app:backgroundTint="@color/start"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/x_value" />
+        app:layout_constraintStart_toEndOf="@+id/reset_btn2"
+        app:layout_constraintTop_toBottomOf="@+id/third_second_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
