@@ -7,7 +7,7 @@
     android:onClick="first_second"
     tools:context=".MainActivity">
 
-    <Switch
+    <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/dark_theme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,15 +17,15 @@
         android:drawableLeft="@drawable/ic_baseline_bedtime_24"
         android:onClick="theme"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <Button
         android:id="@+id/draw_btn"
         android:layout_width="0dp"
         android:layout_height="45dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginBottom="16dp"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:onClick="setDraw"
@@ -34,8 +34,8 @@
         android:textColor="?attr/colorOnSecondary"
         android:textStyle="bold"
         app:backgroundTint="@color/draw"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/third_second_view" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/reset_btn2"
@@ -43,7 +43,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="4dp"
         android:layout_marginLeft="4dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:onClick="reset"
@@ -52,8 +52,8 @@
         android:textColor="?attr/colorOnSecondary"
         android:textStyle="bold"
         app:backgroundTint="?attr/colorSecondary"
-        app:layout_constraintStart_toEndOf="@+id/draw_btn"
-        app:layout_constraintTop_toBottomOf="@+id/third_second_view" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/draw_btn" />
 
     <TextView
         android:id="@+id/o_label"
@@ -209,11 +209,13 @@
         android:id="@+id/line1"
         android:layout_width="300dp"
         android:layout_height="10dp"
-        android:layout_marginTop="128dp"
         android:background="?attr/colorOnSurface"
+        app:layout_constraintBottom_toTopOf="@+id/reset_btn2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/x_value" />
+        app:layout_constraintTop_toBottomOf="@+id/x_value"
+        app:layout_constraintVertical_bias="0.385" />
 
     <View
         android:id="@+id/second_first_view"
@@ -368,10 +370,11 @@
 
     <ImageView
         android:id="@+id/image_logo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/tic_tac_toe_logo_transparent" />
@@ -382,9 +385,9 @@
         android:layout_height="45dp"
         android:layout_marginStart="4dp"
         android:layout_marginLeft="4dp"
-        android:layout_marginTop="24dp"
         android:layout_marginEnd="36dp"
         android:layout_marginRight="36dp"
+        android:layout_marginBottom="16dp"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:onClick="newPoint"
@@ -393,8 +396,9 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:backgroundTint="@color/start"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/reset_btn2"
-        app:layout_constraintTop_toBottomOf="@+id/third_second_view" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/reset_btn2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
